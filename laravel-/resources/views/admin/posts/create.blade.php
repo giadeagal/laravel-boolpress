@@ -16,13 +16,20 @@
             @csrf
             <div class="mb-3">
               <label for="titolo" class="form-label">Titolo</label>
-              <input type="text" name="title" class="form-control" id="titolo" aria-describedby="emailHelp">
+              <input type="text" name="title" class="form-control
+              @error('title')
+                  is-invalid
+              @enderror" 
+              id="titolo" aria-describedby="emailHelp" value="{{ old('title') }}">
               
             </div>
 
             <div class="mb-3">
               <label for="content" class="form-label">Contenuto</label>
-              <textarea name="content" id="content" class="form-control" cols="30" rows="10"></textarea>
+              <textarea name="content" id="content" class="form-control 
+              @error('content')
+              is-invalid
+          @enderror" cols="30" rows="10">{{old('content')}}</textarea>
               
             </div>
             
