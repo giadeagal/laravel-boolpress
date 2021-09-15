@@ -3,6 +3,14 @@
 @section('title', 'Scrivi un nuovo post')
 
 @section('content')
+
+@if ( $errors->any() )
+    @foreach ($errors->all() as $error)
+    
+    <div class="alert alert-danger"> {{ $error }} </div>
+    
+    @endforeach
+@endif
     <div class="container">
         <form action="{{ route('admin.posts.store') }}" method="post" >
             @csrf
