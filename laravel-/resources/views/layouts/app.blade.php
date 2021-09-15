@@ -72,8 +72,28 @@
             </div>
         </nav>
 
+        
+
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                @auth
+            <div class="row">
+                <div class="col-2">
+                  <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Dashboard</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Posts</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Users</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Categories</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Tags</a>
+                  </div>
+                </div>
+               @endauth 
+                <div class="col">
+                    @yield('content')
+                </div>
+              </div>
+              
+            </div>
         </main>
     </div>
 </body>
