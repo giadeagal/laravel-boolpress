@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if (session('updated'))
+<div class="alert alert-success">
+    
+        {{session('updated')}}
+    
+</div>
+@endif
 <div class="container">
     <table class="table table-striped">
         <thead>
