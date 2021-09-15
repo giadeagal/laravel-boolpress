@@ -19,7 +19,7 @@
             <th scope="row">{{$post->id}}</th>
             <td>{{$post->title}}</td>
             <td>
-                <a href="" class="btn btn-primary">Visualizza</a>
+                <a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-primary">Visualizza</a>
                 <a href="" class="btn btn-secondary">Modifica</a>
                 <form action="" class="d-inline-block" method="post">
                     @csrf
