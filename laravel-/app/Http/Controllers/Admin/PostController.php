@@ -41,7 +41,7 @@ class PostController extends Controller
     {
 
         $request->validate([
-            'title' => 'required|max:80|',
+            'title' => 'required|max:50|',
             'content' => 'required'
         ]);
 
@@ -104,6 +104,12 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+
+        $request->validate([
+            'title' => 'required|max:50|',
+            'content' => 'required'
+        ]);
+
         $data = $request->all();
 
         if($data['title'] != $post->title ){
